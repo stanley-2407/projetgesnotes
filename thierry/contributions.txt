@@ -1,0 +1,4 @@
+# contributions.txt
+# Repartition des taches :
+# - Thierry : calcul des moyennes et tri, Sauvegarder les résultats dans un autre fichier et la classe main
+# - Willy : définir la classe étudiant, interface pour lecture, importer les données depuis un fichier csv et classe main 
