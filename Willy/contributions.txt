@@ -1,0 +1,4 @@
+# contributions.txt
+# Indiquez ici qui a fait quoi (exemple) :
+# - Thierry : lecture CSV et export
+# - Binôme : calcul des moyennes et tri
