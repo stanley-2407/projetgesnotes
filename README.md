@@ -1,21 +1,32 @@
-Projet 1: Gestion de notes des étudiants.
+# 🎓 Système de Gestion et Classement des Étudiants (Java)
 
-Ce projet a été réalisé par : 
-•	Willy Stanlin TAGUEDONG
-•	Thierry Pascal ZOKOU TCHOKONTHE
+Ce projet est une application console robuste permettant de gérer les notes des étudiants, de calculer leurs moyennes et d'exporter les résultats. Il met en application les principes fondamentaux de la **Programmation Orientée Objet (POO)**.
 
-pour faire tourner notre programme, nous avons implémenté au total six classe et une interface.
+## 👥 Équipe de Développement
+- **Willy Stanlin TAGUEDONG**
+- **Thierry Pascal ZOKOU TCHOKONTHE**
 
-GestionEtudiantsTest.java : C'est le point d'entrée principal. Il initialise les différents services, puis exécute le flux de travail complet : lecture des données, classement des étudiants, et exportation des résultats en fonction des choix de l'utilisateur.
-  
-IEtudiantImporter.java et CSVEtudiantImporter.java : Ces classes gèrent la persistance des données. L'interface IEtudiantImporter définit le contrat de lecture, tandis que la classe CSVEtudiantImporter implémente ce contrat pour lire les données d'étudiants à partir d'un fichier CSV. Elle est robuste, car elle ignore les lignes vides et gère les notes invalides.
+## 🛠️ Architecture du Projet
+Le programme repose sur une architecture modulaire composée de 6 classes et d'une interface, garantissant une séparation claire des responsabilités :
 
-Etudiant.java : C'est le modèle de données qui représente un étudiant. Il stocke l'identifiant, le nom, le prénom et une liste de notes. Les attributs sont finaux, ce qui rend les objets étudiants immuables une fois créés.
+* **`GestionEtudiantsTest.java`** : Point d'entrée principal (Main) gérant le flux de travail et l'interface utilisateur.
+* **`IEtudiantImporter` & `CSVEtudiantImporter`** : Gestion de la persistance des données. Utilisation d'une **interface** pour permettre une extension facile vers d'autres formats de fichiers (JSON, SQL).
+* **`Etudiant.java`** : Modèle de données immuable représentant l'entité Étudiant.
+* **`CalculMoyenne.java`** : Logique métier dédiée au calcul statistique (gestion des divisions par zéro et des notes invalides).
+* **`Classement.java`** : Implémentation d'un **algorithme de tri par sélection** pour classer les étudiants par performance.
+* **`CSVResultatExporter.java`** : Exportation des données formatées vers un fichier CSV externe.
 
-CalculMoyenne.java : Cette classe est responsable de la logique de calcul de la moyenne d'un étudiant. Il gère le cas où un étudiant n'aurait aucune note pour éviter une division par zéro.
+## 🚀 Fonctionnalités Clés
+- **Robustesse :** Nettoyage automatique des données (ignore les lignes vides, gestion des erreurs de saisie).
+- **Immuabilité :** Sécurisation des données étudiants via des attributs finaux.
+- **Interface Interactive :** Menu console simple permettant à l'utilisateur de choisir ses actions par numérotation.
+- **Précision :** Exportation des moyennes formatées à deux décimales.
 
-Classement.java : Ce service s'occupe de trier la liste des étudiants en fonction de leur moyenne. Il utilise un algorithme de tri par sélection et a une méthode afficherClassement pour imprimer les résultats triés dans la console.
-
-CSVResultatExporter.java : Ce service exporte les résultats dans un nouveau fichier CSV. Le fichier de sortie contient l'ID de l'étudiant, son nom, son prénom et sa moyenne calculée, formatée à deux décimales.
-
-Le fonctionnement est très simple : après le lancement de la classe contenant le main qui est la classe GestionEtudiantTest, une liste d’instructions apparait et demande à l’utilisateur action qu’il souhaite réaliser. Il lui suffit juste d’entrer le numéro correspondant à l’instruction pour l’exécuter. 
+## 📖 Comment l'utiliser
+1. Compilez le projet Java.
+2. Lancez la classe `GestionEtudiantsTest`.
+3. Suivez les instructions dans la console :
+   - Charger le fichier CSV.
+   - Calculer les moyennes.
+   - Afficher le classement.
+   - Exporter les résultats.
